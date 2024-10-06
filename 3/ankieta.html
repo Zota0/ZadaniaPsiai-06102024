@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 3.</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+
+    <form method='post' action='/form/3/wynik.php'>
+
+        <div id="grupa-pytania-1">
+            <label for="pytanie1">Pierwsze pytanie:</label>
+            <select name="pytanie1" id='pytanie1'>
+                <option disabled selected>Wybierz...</option>
+                <option value="tak">Tak</option>
+                <option value="nie">Nie</option>
+                <option value="nwm">Nie wiem</option>
+            </select>
+        </div>
+        <br><br>
+        
+        <div id="grupa-pytania-2">
+            <label for="grupa-pytania-2">Drugie pytanie:</label>
+            <div>
+                <div>
+                    <label for="pytanie2-tak" class='for-radio'>Tak</label>
+                    <input type="radio" name="pytanie2" id="pytanie2-tak" value='tak' required>
+                </div>
+                <div>
+                    <label for="pytanie2-nie" class='for-radio'>Nie</label>
+                    <input type="radio" name="pytanie2" id="pytanie2-nie" value='nie' required>
+                </div>
+                <div>
+                    <label for="pytanie2-nwm" class='for-radio'>Nie wiem</label>
+                    <input type="radio" name="pytanie2" id="pytanie2-nwm" value='nwm' required>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        
+        <div id="grupa-pytania-3">
+            <label for="grupa-pytania-3">Trzecie pytanie: (wiele do wyboru)</label>
+            <div>
+                <div>
+                    <label for="pytanie3-A" class='for-radio'>A</label>
+                    <input type="checkbox" name="pytanie3-A" id="pytanie3-A">
+                </div>
+                <div>
+                    <label for="pytanie3-B" class='for-radio'>B</label>
+                    <input type="checkbox" name="pytanie3-B" id="pytanie3-B">
+                </div>
+                <div>
+                    <label for="pytanie3-C" class='for-radio'>C</label>
+                    <input type="checkbox" name="pytanie3-C" id="pytanie3-C">
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <input type="submit" value="Wyślij odpowiedzi">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 6.</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+
+    <form method='post' action='/form/6/pizza.php'>
+
+        <label for="odleglosc">Odległość:</label>
+        <input type="number" step='0.01' name="odleglosc" id="odleglosc" min="1" required>
+        <pre style='position: relative; z-index: 1000; top: -44px; font-size: 18px; margin-bottom: -54px; left: 280px;'>km</pre>
+        <br><br>
+
+        <input type='checkbox' name='ciepla' id='ciepla'>
+        <label class='for-checkbox' for='ciepla'>Ma być ciepla?</label>
+        <br>
+        
+        <input placeholder="Wpisz swój " type="submit" value="Oblicz">
+    </form>
+
+</body>
+</html>

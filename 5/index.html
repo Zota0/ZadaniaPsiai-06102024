@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Zadanie 5.</title>
+        <link rel="stylesheet" href="../index.css">
+    </head>
+
+    <body>
+        <form method='post' action='/form/5/koszt.php'>
+            <div>
+                <label for="koszt-benzyny">Koszt benzyny</label>
+                <input type="number" step='0.01' name="koszt-benzyny" id="koszt-benzyny" required>
+                <pre style='position: relative; z-index: 1000; top: -44px; font-size: 18px; margin-bottom: -54px; left: 260px;'>PLN</pre>
+            </div>
+            <br><br>
+            <div>
+                <label for="dystans">Dystans</label>
+                <input type="number" step='0.01' name="dystans" id="dystans" min="1" required>
+                <pre style='position: relative; z-index: 1000; top: -44px; font-size: 18px; margin-bottom: -54px; left: 270px;'>km</pre>
+            </div>
+            <br><br>
+            <div>
+                <label for="spalanie-na-km">Spalanie na km</label>
+                <input type="number" step='0.01' name="spalanie-na-km" id="spalanie-na-km" min="1"
+                    required>
+                <pre style='position: relative; z-index: 1000; top: -44px; font-size: 18px; margin-bottom: -32px; left: 260px;'>l/km</pre>
+            </div>
+            <br><br>
+            <input placeholder="Wpisz swój " type="submit" value="Oblicz">
+            <output id='wynik'></output>
+        </form>
+        <script>
+            const dystans = document.getElementById('dystans');
+            const kosztBenzyny = document.getElementById('koszt-benzyny');
+            const spalanieNaKm = document.getElementById('spalanie-na-km');
+            const wynik = document.getElementById('wynik');
+
+            dystans.addEventListener('input', Pokaz);
+            kosztBenzyny.addEventListener('input', Pokaz);
+            spalanieNaKm.addEventListener('input', Pokaz);
+
+
+            function Pokaz() {
+                const dystans_km = parseFloat(dystans.value);
+                const kosztBenzyny_pln = parseFloat(kosztBenzyny.value);
+                const spalanie_l_km = parseFloat(spalanieNaKm.value);
+
+                if (isNaN(dystans_km) || isNaN(kosztBenzyny_pln) || isNaN(spalanie_l_km) || spalanie_l_km <= 0) {
+                    wynik.textContent = '';
+                } else if (dystans_km > 0 && kosztBenzyny_pln > 0 && spalanie_l_km > 0) {
+                    const koszt = (kosztBenzyny_pln / spalanie_l_km) * dystans_km;
+                    wynik.textContent = `Koszt to: ${koszt.toFixed(2)} PLN`;
+                } else {
+                    wynik.textContent = '';
+                }
+            }
+        </script>
+    </body>
+
+</html>
