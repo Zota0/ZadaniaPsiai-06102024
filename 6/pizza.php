@@ -12,7 +12,7 @@
         $dystans = (float)$_POST['odleglosc'] ?? 0.0;
         $ciepla = (boolean)$_POST['ciepla'] ?? false;
         (float)$wynik = $koszt_na_km * $dystans;
-        $wynik += (0.15 * $wynik);
+        $wynik += ($ciepla) ? (0.15 * $wynik) : 0;
     ?>
 
     <pre>
